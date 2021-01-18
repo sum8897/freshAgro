@@ -1,0 +1,146 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons  slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title style="text-align:center;margin-right: 0px;" ><img src="../../../assets/icon/logo.png"></ion-title>
+    <ion-buttons slot="end"  >
+      <ion-icon name="cart-outline" style="font-size:20px;padding-right: 10px;"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  <!-- <ion-toolbar> -->
+    <ion-searchbar mode="ios"  cancelButtonText="Custom Cancel"></ion-searchbar>
+
+  <!-- </ion-toolbar> -->
+  <ion-grid>
+    <ion-row>
+      <ion-col size="8">
+        <ion-radio-group  (ionChange)="radioGroupChange($event)" #radioGroup allow-empty-selection="true">
+         <div class="radioCat" (ionSelect)="bouquetSelect($event)">
+          <ion-radio slot="start" value="bouquet" checked="false"  mode="md" ></ion-radio>
+          <ion-label>BOUQUET</ion-label>
+          <ion-radio slot="start" value="flowers"   mode="md"  ></ion-radio>
+          <ion-label>FLOWERS</ion-label>
+        </div>
+        </ion-radio-group>
+    </ion-col>
+      <ion-col size="4" class="location" (click)="getGeolocation()"> 
+        <ion-icon name="locate-outline"></ion-icon>110096
+      </ion-col>
+    </ion-row>
+    </ion-grid>
+
+    <ion-slides #buttonSlideEle autoplay='true' loop='true' pager='false' scrollbar='false' [options]='buttonSlides' *ngIf="flower">
+      <ion-slide *ngFor="let i of flowercard">
+        <ion-card mode="md" style="width:150px;height: 150px;"> <img src="{{i.img}}" />
+          <span style="position: absolute; top: 75%; left: 4px; color: white; font-size: 15px; font-weight: bold; z-index: 2;background-color: #0a0a0a6b; padding: 0px 6px; border-radius: 5px;">
+            {{i.name}}
+          </span>      
+        </ion-card>       
+      </ion-slide>
+    </ion-slides>
+
+
+  <h4 id="specialCard">Special Event</h4>
+<div class="specialEvent" *ngIf="special">
+  <ion-slides #buttonSlideEle autoplay='true' loop='true' pager='false' scrollbar='false' [options]='buttonSlides1'>
+    <ion-slide *ngFor="let sp of specialEvent">
+      <ion-card mode="md">
+        <ion-item>
+          <ion-avatar id="specialEventAvatar">
+            <img src="{{sp.img}}" /> 
+          </ion-avatar> 
+        </ion-item>
+       <p>{{sp.name}}</p>
+      </ion-card>       
+    </ion-slide>
+  </ion-slides>
+</div>
+
+<ion-slides #buttonSlideEle autoplay='true' loop='true' pager='false' scrollbar='false' [options]='buttonSlides'>
+  <ion-slide *ngFor="let i of flowercard">
+    <ion-card mode="md" style="width:150px;height: 150px;"> <img src="{{i.img}}" />
+      <span style="position: absolute; top: 75%; left: 4px; color: white; font-size: 15px; font-weight: bold; z-index: 2;background-color: #0a0a0a6b; padding: 0px 6px; border-radius: 5px;">
+        {{i.name}}
+      </span>      
+    </ion-card>       
+  </ion-slide>
+</ion-slides>
+
+
+<h4 id="specialCard">Special Event</h4>
+<div class="specialEvent" >
+<ion-slides #buttonSlideEle autoplay='true' loop='true' pager='false' scrollbar='false' [options]='buttonSlides1'>
+<ion-slide *ngFor="let sp of specialEvent">
+  <ion-card mode="md">
+    <ion-item>
+      <ion-avatar id="specialEventAvatar">
+        <img src="{{sp.img}}" /> 
+      </ion-avatar>
+    </ion-item>
+   <p>{{sp.name}}</p>
+  </ion-card>       
+</ion-slide>
+</ion-slides>
+</div>
+
+<h4 id="specialCard">Best offer of the day</h4>
+<div class="specialEvent" >
+  <ion-slides #buttonSlideEle autoplay='true' loop='true' pager='false' scrollbar='false' [options]='buttonSlides3'>
+    <ion-slide *ngFor="let i of flowercard">
+      <ion-card mode="md" style="width:150px;height: 150px;"> <img src="{{i.img}}" />
+        <p>{{i.name}}</p>    
+      </ion-card>       
+    </ion-slide>
+  </ion-slides>
+  </div>
+
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="4" class="ion-text-center">
+        Latitue
+      </ion-col>
+      <ion-col>
+        <ion-badge class="ion-text-wrap" color="medium">{{latitude}}</ion-badge>
+      </ion-col>
+    </ion-row>
+
+  
+    <ion-row>
+      <ion-col size="4" class="ion-text-center">
+        longitude
+      </ion-col>
+      <ion-col>
+        <ion-badge class="ion-text-wrap" color="medium">{{longitude}}</ion-badge>
+      </ion-col>
+    </ion-row>
+
+    <!-- Accuracy -->
+    <ion-row>
+      <ion-col size="4" class="ion-text-center" color="medium">
+        Accuracy
+      </ion-col>
+      <ion-col>
+        <ion-badge class="ion-text-wrap" color="medium">{{accuracy}}</ion-badge>
+      </ion-col>
+    </ion-row>
+
+    <!-- Address -->
+    <ion-row>
+      <ion-col size="4" class="ion-text-center">
+        Address
+      </ion-col>
+      <ion-col>
+        <ion-badge class="ion-text-wrap" color="medium">{{address}}</ion-badge>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+  <ion-button (click)="getGeolocation()" color="success" expand="full">Get Location</ion-button>
+</ion-content>

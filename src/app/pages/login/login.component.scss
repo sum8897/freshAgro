@@ -1,0 +1,66 @@
+ion-content{
+    --background: #fff url('../../../assets/icon/app.jpg') no-repeat center center / cover;
+    }
+    .logo{
+        margin-top: 55px;
+        text-align: center;
+        img{
+            width: 150px;
+        }
+    }
+    ion-list{
+        margin: 5px 30px;
+    }
+    ion-item{
+        border: 1px solid #b50084;
+        border-radius: 21px;
+        height: 43px;
+        margin: 7px 0;
+        .loginIcon{
+            margin-right: 7px;
+        }
+    }
+ion-input{
+    border-left: 1px solid #b50084;
+}
+    ion-button{
+        margin-bottom: 65px;
+        margin-top: 11px;
+        text-align: center;
+        font-size: 15px;
+        text-transform: inherit;
+    }
+    // ion-card{
+      
+    //     min-width: 100%;
+       
+    //     top: 25%;
+    //     border-radius: 50%;
+      
+    //     margin: auto;
+    //     opacity: 0.8;
+    // }
+
+    @media all and (max-width: 1960px) and (min-width: 420px) {
+        ion-card#loginCard{
+          width: 400px;
+          height: 400px;
+        //   min-width: 100%;
+          top: 25%;
+          border-radius: 50%;
+          margin: auto;
+          opacity: 0.8;
+        }
+      }
+
+      @media all and (max-width: 419px) and (min-width: 320px) {
+        ion-card#loginCard{
+        //   width: 400px;
+        //   height: 400px;
+          min-width: 100%;
+          top: 25%;
+          border-radius: 50%;
+          margin: auto;
+          opacity: 0.8;
+        }
+      }

@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { LoginComponent } from './pages/login/login.component';
+import { MainpageComponent } from './pages/mainpage/mainpage.component';
+import { SingleproductdetailsComponent } from './pages/singleproductdetails/singleproductdetails.component';
 
 const routes: Routes = [
   {
@@ -8,9 +11,21 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'mainpage',
     pathMatch: 'full'
   },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path:'mainpage',
+    component: MainpageComponent
+  },
+  {
+    path:'singleproductdetails',
+    component: SingleproductdetailsComponent
+  }
 ];
 
 @NgModule({

@@ -1,0 +1,43 @@
+img{
+    width: 150px;
+}
+.radioCat{
+        display: flex;
+    ion-label{
+        padding: 0 5px;
+        margin-top: 2px;
+    }
+    ion-radio{
+        --color: #b50084;
+    }
+}
+ion-card{
+    img{
+        height: 150px;
+    }
+}
+#specialCard{
+    padding-left: 12px;
+    margin-top: 5px;
+}
+
+ion-card{
+    ion-avatar{
+        margin: 10px auto;
+        width: 95px;
+        height: 93px;
+  }
+}
+.location{
+    display: flex;
+    ion-icon{
+        font-size: 19px;
+        padding-right: 2px;
+        color: #b50084;
+        opacity: 1;
+    }
+}
+// p{
+//     border-block-start: 1px solid red;
+//     padding-top: 7px;
+// }
