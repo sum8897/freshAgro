@@ -14,6 +14,7 @@ export class SingleproductdetailsComponent implements OnInit {
   private buttonSlides3 = {
     slidesPerView: 1.0,
     initialSlide: 0,
+    autoplay:true,
   }
 
   flowercard = [

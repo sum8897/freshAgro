@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { NativeGeocoder, NativeGeocoderOptions, NativeGeocoderResult } from '@ionic-native/native-geocoder/ngx';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-mainpage',
@@ -24,7 +25,8 @@ export class MainpageComponent implements OnInit {
     maxResults: 5
   };
   constructor(private geolocation: Geolocation,
-    private nativeGeocoder: NativeGeocoder) {
+    private nativeGeocoder: NativeGeocoder,
+    private navCtrl: NavController) {
     this.getGeolocation();
   }
 
@@ -205,6 +207,15 @@ export class MainpageComponent implements OnInit {
     }
     return address.slice(0, -2);
   }
-
+productdetails(){
+  // singleproductdetails
+  // productcategory
+  console.log('product details..');
+  this.navCtrl.navigateRoot('/singleproductdetails'); 
+}
+special1(){
+  console.log('special click');
+  this.navCtrl.navigateRoot('/productcategory'); 
+}
 
 }

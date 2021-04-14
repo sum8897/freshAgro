@@ -6,6 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { LocationAccuracy } from '@ionic-native/location-accuracy/ngx';
+import { FCM } from 'cordova-plugin-fcm-with-dependecy-updated/ionic/ngx';
 
 @Component({
   selector: 'app-root',
@@ -21,7 +22,8 @@ export class AppComponent {
     private statusBar: StatusBar,
     private androidPermissions: AndroidPermissions,
     private geolocation: Geolocation,
-    private locationAccuracy: LocationAccuracy
+    private locationAccuracy: LocationAccuracy,
+    private fcm:FCM
   ) {
     this.sideMenu();
     this.initializeApp();
@@ -39,6 +41,7 @@ export class AppComponent {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      this.pushSetup();
     });
   }
 
@@ -116,21 +119,61 @@ export class AppComponent {
         icon  : "home"
       },
       {
-        title : "categoty",
+        title : "product details",
         url   : "/singleproductdetails",
         icon  : "add"
       },
       {
-        title : "Contacts",
-        // url   : "/call",
+        title : "categories",
+        url   : "/productcategory",
         icon  : "call"
       },
       {
         title : "Grid View",
-        // url   : "/gridview",
+        url   : "/cart",
         icon  : "cart"
+      },
+      {
+        title : "Help & Support",
+        url   : "/support",
+        icon  : "help-outline"
+      },
+      {
+        title : "profile",
+        url   : "/userprofile",
+        icon  : "person-outline"
+      },
+      {
+        title : "payment",
+        url   : "/payment",
+        icon  : "person-outline"
       },
     ]
   }
+token;
+hasPermission;
+  private async pushSetup() {
+    await this.platform.ready();
 
+    console.log('FCM SETUP INIT');
+    if (!this.platform.is('cordova')) {
+      return;
+    }
+
+    console.log('IN CORDOVA');
+
+    this.hasPermission = await this.fcm.requestPushPermission();
+    console.log('CHECK hasPermission:', this.hasPermission);
+
+    this.token = await this.fcm.getToken();
+    console.log('CHECK getToken: ' + this.token);
+    alert('CHECK getToken: ' + this.token)
+    console.log('ON NOTIFICATION SUBSCRIBE');
+    this.fcm
+      .onTokenRefresh()
+      .subscribe((newToken) => alert('NEW TOKEN:'+ newToken));
+    this.fcm
+      .onNotification()
+      .subscribe((payload: object) => console.log('ON NOTIFICATION:', payload));
+  }
 }

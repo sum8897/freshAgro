@@ -16,12 +16,24 @@ import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { LocationAccuracy } from '@ionic-native/location-accuracy/ngx';
 import { NativeGeocoder } from '@ionic-native/native-geocoder/ngx';
 import { SingleproductdetailsComponent } from './pages/singleproductdetails/singleproductdetails.component';
+import { ProductcategoryComponent } from './pages/productcategory/productcategory.component';
+import { CartComponent } from './pages/cart/cart.component';
+import { SupportComponent } from './pages/support/support.component';
+import { UserprofileComponent } from './pages/userprofile/userprofile.component';
+import { PaypalComponent } from './pages/paypal/paypal.component';
+import { PayPal, PayPalPayment, PayPalConfiguration } from '@ionic-native/paypal/ngx';
+import { FCM } from 'cordova-plugin-fcm-with-dependecy-updated/ionic/ngx';
 
 @NgModule({
   declarations: [AppComponent,
                  LoginComponent,
                  MainpageComponent,
                  SingleproductdetailsComponent,
+                 ProductcategoryComponent,
+                 CartComponent,
+                 SupportComponent,
+                 UserprofileComponent,
+                 PaypalComponent
                  ],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
@@ -30,8 +42,10 @@ import { SingleproductdetailsComponent } from './pages/singleproductdetails/sing
     SplashScreen,
     AndroidPermissions,
     Geolocation,
-    LocationAccuracy,
-    NativeGeocoder,
+    // LocationAccuracy,
+    // NativeGeocoder,
+    PayPal,
+    FCM,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

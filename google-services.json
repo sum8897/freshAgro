@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "523237372644",
+    "project_id": "flowerclub-feca7",
+    "storage_bucket": "flowerclub-feca7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:523237372644:android:8a2c16590a2d05cf78f2f1",
+        "android_client_info": {
+          "package_name": "io.flowerclub.com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "523237372644-n147aaiescrmoifonkvvjjv8k0hd0i1v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjoSKkoC6_LRQ-cOtD-GlV4l-Sc-gz1iM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "523237372644-n147aaiescrmoifonkvvjjv8k0hd0i1v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

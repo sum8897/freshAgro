@@ -1,0 +1,23 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start" >
+      <ion-back-button defaultHref="/mainpage"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="text-align:center;">Help & Support</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="--background: #f5f5f5;">
+<ion-card>
+  <ion-card-header (click)="toggleAccordion()">
+    <div style="display:inline-flex"> 
+      <ion-icon name="help-circle-outline" style="font-size: 30px;"></ion-icon>
+      <p>Contact Number</p>
+      <ion-icon name="chevron-forward-outline" style="font-size: 30px;" slot="end"></ion-icon>
+    </div>
+  </ion-card-header>
+  <ion-card-content *ngIf="show">
+Askjjjsda hkdshj kajkykfuhjnb iuhkhja jkudkkjn ashihs chaurasiya 
+  </ion-card-content>
+</ion-card>
+</ion-content>
