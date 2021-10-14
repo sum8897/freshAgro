@@ -42,8 +42,8 @@ import { FCM } from 'cordova-plugin-fcm-with-dependecy-updated/ionic/ngx';
     SplashScreen,
     AndroidPermissions,
     Geolocation,
-    // LocationAccuracy,
-    // NativeGeocoder,
+    LocationAccuracy,
+    NativeGeocoder,
     PayPal,
     FCM,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }

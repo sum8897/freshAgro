@@ -22,7 +22,7 @@
     "@ionic-native/android-permissions": "^5.30.0",
     "@ionic-native/core": "^5.0.0",
     "@ionic-native/fcm": "^5.31.1",
-    "@ionic-native/geolocation": "^5.30.0",
+    "@ionic-native/geolocation": "^5.36.0",
     "@ionic-native/location-accuracy": "^5.30.0",
     "@ionic-native/native-geocoder": "^5.30.0",
     "@ionic-native/paypal": "^5.31.1",
